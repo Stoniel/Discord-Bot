@@ -1,0 +1,29 @@
+import discord
+from discord.ext.commands import Bot
+
+bot = Bot(command_prefix='!')
+
+@bot.event
+async def on_read():
+    print('Client Logged in')
+
+@bot.command()
+async def helpme(*args):
+    return await bot.say('Current Commands = !help')
+
+if __name__ == '__main__':
+
+    #bot.config = load_config()
+
+    extensions = [
+        'commands.counter'
+    ]
+
+    for extension in extensions:
+        try:
+            logging.info('Loading extension {}'.format(extension))
+            bot.load_extension(extension)
+        except Exception as e:
+            logging.error('Failed to load extension {}\n{}: {}'.format(extension, type(e).__name__, e))
+
+bot.run('MzIwMzM3MzI3NjgxNTY4NzY4.DCjH9g.ynp58ZpkyyJPB72L34mhCtHC8ak')
