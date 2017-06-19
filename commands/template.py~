@@ -1,0 +1,25 @@
+import discord
+from discord.ext import commands
+
+class Template:
+    def __init__(self,bot):
+        self.bot = bot
+        self.var = 'This is just some var you want to make. Dont need String/int/etc its automatic'
+        
+        #alias allows (for example) !template or !myTemplate as the command. pass_context allows you to check message author so you can @mention them.
+    
+    @commands.command(
+        name='count',
+        aliases=['myTemplate','otherstuff'],
+        description='Template Command',
+        brief='Some brief shit idk',
+        pass_context = True
+    )
+        #this 'template' is the original command name, ctx is context from pass_context
+    async def template(self,ctx):
+        msg = 'some stupid link to a meme i bet'
+        await self.bot.say(msg)
+    
+def setup(bot):
+    bot.add_cog(Template(bot))
+#The last thing to do is to go to the DiscordBot.py and add commands.<insertclassname>

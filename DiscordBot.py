@@ -9,9 +9,10 @@ async def on_read():
 
 
 if __name__ == '__main__':
-
+#add commands.yourCommand
     extensions = [
-        'commands.counter'
+        'commands.counter',
+        'commands.template'
     ]
 
     for extension in extensions:
