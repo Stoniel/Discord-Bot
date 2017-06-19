@@ -7,9 +7,6 @@ bot = Bot(command_prefix='!')
 async def on_read():
     print('Client Logged in')
 
-@bot.command()
-async def helpme(*args):
-    return await bot.say('Current Commands = !help')
 
 if __name__ == '__main__':
 
