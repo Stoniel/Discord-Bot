@@ -9,10 +9,12 @@ async def on_read():
 
 
 if __name__ == '__main__':
-#add commands.yourCommand
+#add commands.yourCommand with a , outside the quote
     extensions = [
         'commands.counter',
-        'commands.template'
+        'commands.template',
+        'commands.RockPaperScissors'
+        
     ]
 
     for extension in extensions:
