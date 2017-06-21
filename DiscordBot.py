@@ -20,4 +20,4 @@ if __name__ == '__main__':
     for extension in extensions:
             bot.load_extension(extension)
 
-bot.run('MzIwMzM3MzI3NjgxNTY4NzY4.DCjH9g.ynp58ZpkyyJPB72L34mhCtHC8ak')
+    bot.run('<BOT API KEY HERE>')
