@@ -31,15 +31,17 @@ class RockPaperScissors:
 
 
     @commands.group(
+        name = 'rps',
         description='Rock Paper Scissors',
         brief='Rock Paper Scissors!',
-        pass_context = True
+        pass_context = True,
+        invoke_without_command = True
     )
 
     async def rps(self,ctx):
-            msg = 'Type <!rps Choice> '
-            await self.bot.say(msg)
-        
+            #if len(message) <= 1:
+        await self.bot.say("Say \"!rps <Rock/Paper/Scissors> \" to make your choice")
+                
     @rps.command(
         name='rock',
         description = "Choice Rock",
