@@ -16,8 +16,8 @@ class Template:
         pass_context = True
     )
 
-    async def template(self,ctx):
-        msg = 'some stupid link to a meme i bet'
+    async def template(self,ctx,*,message):
+        msg = message
         await self.bot.say(msg)
     
 def setup(bot):

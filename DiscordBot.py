@@ -13,11 +13,12 @@ if __name__ == '__main__':
     extensions = [
         'commands.counter',
         'commands.template',
-        'commands.RockPaperScissors'
+        'commands.RockPaperScissors',
+        'commands.timer'
         
     ]
 
     for extension in extensions:
             bot.load_extension(extension)
 
-    bot.run('<Key Here>')
+    bot.run('<My Token Here>')
