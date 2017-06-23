@@ -11,7 +11,7 @@ class Timer:
         name = "timer",
         aliases = ['time'],
         description = "Countdown Timer",
-        brief = 'Timer'
+        brief = 'This is a timer'
     )
     async def timer(self,ctx, max = 3):
         if not isinstance(max,(int , float)):
