@@ -12,7 +12,7 @@ class Template:
         name='template',
         aliases=['myTemplate','otherstuff'],
         description='Template Command',
-        brief='This is a template',
+        brief='Ryas\'s template',
         pass_context = True
     )
 
