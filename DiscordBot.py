@@ -1,4 +1,5 @@
 import discord
+import secrets
 from discord.ext.commands import Bot
 
 bot = Bot(command_prefix='!')
@@ -14,11 +15,13 @@ if __name__ == '__main__':
         'commands.counter',
         'commands.template',
         'commands.RockPaperScissors',
-        'commands.timer'
+        'commands.timer',
+        'commands.raids',
+        'commands.unixComs'
         
     ]
 
     for extension in extensions:
             bot.load_extension(extension)
 
-    bot.run('<My Token Here>')
+    bot.run(secrets.BOT_TOKEN)
