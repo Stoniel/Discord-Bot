@@ -17,7 +17,8 @@ if __name__ == '__main__':
         'commands.RockPaperScissors',
         'commands.timer',
         'commands.raids',
-        'commands.unixComs'
+        'commands.unixComs',
+        'commands.dice'
         
     ]
 
