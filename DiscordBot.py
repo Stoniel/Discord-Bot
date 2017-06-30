@@ -18,7 +18,8 @@ if __name__ == '__main__':
         'commands.timer',
         'commands.raids',
         'commands.unixComs',
-        'commands.dice'
+        'commands.dice',
+        'commands.translate'
         
     ]
 
