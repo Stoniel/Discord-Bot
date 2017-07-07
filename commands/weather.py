@@ -1,3 +1,4 @@
+#@author: Stone Daniel July 2017
 import discord
 from discord.ext import commands
 import json
@@ -8,7 +9,6 @@ class Weather:
     def __init__(self,bot):
         self.bot = bot
         
-        #alias allows (for example) !template or !myTemplate as the command. pass_context allows you to check message author so you can @mention them.
     
     @commands.group(
         name='weather',
@@ -23,9 +23,6 @@ class Weather:
         #locs = {}
         #with open('locations.json','r') as f:
         #    locs = json.load(f)
-        #lat = locs['athens,ga'][0]
-        #longitude = locs['athens,ga'][1]
-        #loc = "Athens,GA"
         geocode = requests.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + message + '&key=' + secrets.geocode_API)
         loc = geocode.json()['results'][0]['address_components'][0]['long_name']
         lat = geocode.json()['results'][0]['geometry']['location']['lat']
@@ -38,4 +35,3 @@ class Weather:
         
 def setup(bot):
     bot.add_cog(Weather(bot))
-#The last thing to do is to go to the DiscordBot.py and add commands.<insertclassname>
