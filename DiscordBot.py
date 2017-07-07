@@ -19,7 +19,8 @@ if __name__ == '__main__':
         'commands.raids',
         'commands.unixComs',
         'commands.dice',
-        'commands.translate'
+        'commands.translate',
+        'commands.weather'
         
     ]
 
