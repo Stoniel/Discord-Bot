@@ -1,3 +1,4 @@
+#@author: Stone Daniel July 2017
 import discord
 from discord.ext import commands
 from google.cloud import translate
@@ -6,7 +7,6 @@ class Translate:
     def __init__(self,bot):
         self.bot = bot
         
-        #alias allows (for example) !template or !myTemplate as the command. pass_context allows you to check message author so you can @mention them.
     
     @commands.command(
         name='translate',
@@ -31,16 +31,9 @@ class Translate:
     
     def translate_text(self,target, text):
         translate_client = translate.Client()
-        
-        ##if isinstance(text, six.binary_type):
-          ##  text = text.decode('utf-8')
-
-        # Text can also be a sequence of strings, in which case this method
-        # will return a sequence of results for each text.
         result = translate_client.translate(
             text, target_language=target)
         return('Translation: {}'.format(result['translatedText']))
 
 def setup(bot):
     bot.add_cog(Translate(bot))
-#The last thing to do is to go to the DiscordBot.py and add commands.<insertclassname>
