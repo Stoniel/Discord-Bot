@@ -26,11 +26,12 @@ class Trivia:
         self.answered = True
         self.responses = 0
 
-    async def scoreboard(self):
+    def scoreboard(self):
         msg  = "The current scores are:\n" + "```"
         for i in self.players:
-            msg += i.name + ": " + i.score + "\n"
-        await self.bot.say(msg)
+            msg += i.name + ": " + str(i.score) + "\n"
+        msg += "```"
+        return msg
         
 
     @commands.group(
@@ -120,13 +121,17 @@ class Trivia:
 
     )
     async def a(self,ctx):
-        for index,i in self.players:
-            if not(ctx.message.author.id == i.id) and (index == (len(self.players)-1)):
-                await self.bot.say("You are not in the queue, and cannot answer this question.")
+        for i in range(0,len(self.players)):
+            if(ctx.message.author.id == self.players[i].id):
+                if self.correct == 3:
+                    self.players[i].score += self.points
+            elif(i == len(self.players)-1):
+                await self.bot.say("You are not in the queue and cannot answer this question.")
                 return
-        if(self.correct == 0):
-            self.players.score += self.points
-
+        if(self.responses == (len(self.players)-1)):
+            msg  = "```The correct answers was " + self.correct_sent + "```"
+        msg += " " + self.scoreboard()
+        await self.bot.say(msg)
 
     @trivia.command(
         name = "b",
@@ -137,12 +142,17 @@ class Trivia:
 
     )
     async def b(self,ctx):
-        for index,i in self.players:
-            if not(ctx.message.author.id == i.id) and (index == (len(self.players)-1)):
-                await self.bot.say("You are not in the queue, and cannot answer this question.")
+        for i in range(0,len(self.players)):
+            if(ctx.message.author.id == self.players[i].id):
+                if self.correct == 1:
+                    self.players[i].score += self.points
+            elif(i == len(self.players)-1):
+                await self.bot.say("You are not in the queue and cannot answer this question.")
                 return
-        if(self.correct == 1):
-            self.players.score += self.points
+        if(self.responses == (len(self.players)-1)):
+            msg  = "```The correct answers was " + self.correct_sent + "```"
+        msg += " " + self.scoreboard()
+        await self.bot.say(msg)
 
     @trivia.command(
         name = "c",
@@ -153,12 +163,17 @@ class Trivia:
 
     )
     async def c(self,ctx):
-        for index,i in self.players:
-            if not(ctx.message.author.id == i.id) and (index == (len(self.players)-1)):
-                await self.bot.say("You are not in the queue, and cannot answer this question.")
+        for i in range(0,len(self.players)):
+            if(ctx.message.author.id == self.players[i].id):
+                if self.correct == 2:
+                    self.players[i].score += self.points
+            elif(i == len(self.players)-1):
+                await self.bot.say("You are not in the queue and cannot answer this question.")
                 return
-        if(self.correct == 2):
-            self.players.score += self.points
+        if(self.responses == (len(self.players)-1)):
+            msg  = "```The correct answers was " + self.correct_sent + "```"
+        msg += " " + self.scoreboard()
+        await self.bot.say(msg)
 
     @trivia.command(
         name = "d",
@@ -169,16 +184,17 @@ class Trivia:
 
     )
     async def d(self,ctx):
-        for index,i in self.players:
-            if not(ctx.message.author.id == i.id) and (index == (len(self.players)-1)):
-                await self.bot.say("You are not in the queue, and cannot answer this question.")
+        for i in range(0,len(self.players)):
+            if(ctx.message.author.id == self.players[i].id): 
+                if self.correct == 3:
+                    self.players[i].score += self.points
+            elif(i == len(self.players)-1):
+                await self.bot.say("You are not in the queue and cannot answer this question.")
                 return
-        if(self.correct == 3):
-            self.players.score += self.points
-        if(self.responses == (list(players)-1)):
-            msg  = "```The correct answers was " + self.correct_sent
+        if(self.responses == (len(self.players)-1)):
+            msg  = "```The correct answers was " + self.correct_sent + "```"
+        msg += " " + self.scoreboard()
         await self.bot.say(msg)
-        self.scoreboard
         
 
 
