@@ -24,10 +24,10 @@ class Translate:
             if index != 0:
                 tex += full[index]
         msg = self.translate_text(targ,tex)
-        if(len(msg) <= 50):
+        if(len(msg) <= 100):
             await self.bot.say(msg)
         else:
-            await self.bot.say("Please keep the message shorter than 50 characters.")
+            await self.bot.say("Please keep the message shorter than 100 characters.")
     
     def translate_text(self,target, text):
         translate_client = translate.Client()

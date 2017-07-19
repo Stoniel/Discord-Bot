@@ -20,7 +20,8 @@ if __name__ == '__main__':
         'commands.unixComs',
         'commands.dice',
         'commands.translate',
-        'commands.weather'
+        'commands.weather',
+        'commands.trivia'
         
     ]
 

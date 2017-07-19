@@ -48,3 +48,4 @@ class Weather:
         
 def setup(bot):
     bot.add_cog(Weather(bot))
+B
