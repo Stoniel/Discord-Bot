@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-class UnixComs:
+class UnixCmds:
     def __init__(self,bot):
         self.bot = bot
         
@@ -26,5 +26,5 @@ class UnixComs:
         await self.bot.say(msg)
     
 def setup(bot):
-    bot.add_cog(UnixComs(bot))
+    bot.add_cog(UnixCmds(bot))
 #The last thing to do is to go to the DiscordBot.py and add commands.<insertclassname>
