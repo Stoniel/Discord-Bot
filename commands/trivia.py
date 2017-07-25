@@ -4,6 +4,7 @@ import requests
 import json
 from random import shuffle
 import html
+from time import sleep
 
 class Trivia:
     class Player(object):
@@ -32,6 +33,7 @@ class Trivia:
             msg += i.name + ": " + str(i.score) + "\n"
         msg += "```"
         return msg
+    
         
     def nextq(self):
         if not self.players:
@@ -78,6 +80,32 @@ class Trivia:
     async def trivia(self,ctx,*,message):
         msg = "Please Join or Start the game!"
         await self.bot.say(msg)
+
+    @trivia.command(
+        name = "toWin",
+        aliases = ["end","finish"],
+        description = "Change the score required to win",
+        breif = "Change score to win"
+    )
+    async def towin(self,message):
+        self.win = int(message)
+        await self.bot.say("The new score to win is " + str(self.win))
+
+    @trivia.command(
+        name = "reset",
+        aliases = ["newgame"],
+        description = "Reset the scoreboard as well as the queue",
+        brief = "Start a new game"
+    )
+    async def reset(self):
+        self.players = []
+        self.win = 200
+        self.correct_sent = ""
+        self.responses = 0
+        self.correct = 0
+        self.points  = 0
+        self.answered = True
+        await self.bot.say("```Queue/Scoreboards Wiped```")
 
     @trivia.command(
         name = 'queue',
@@ -196,6 +224,7 @@ class Trivia:
                     msg = "```" + self.players[i].name + "wins!"
                     self.players = []
                     return
+            sleep(1)
             await self.bot.say(self.nextq())
 
     @trivia.command(
@@ -231,6 +260,7 @@ class Trivia:
                     msg = "```" + self.players[i].name + "wins!"
                     self.players = []
                     return
+            sleep(1)
             await self.bot.say(self.nextq())
 
     @trivia.command(
@@ -266,6 +296,7 @@ class Trivia:
                     msg = "```" + self.players[i].name + "wins!"
                     self.players = []
                     return
+            sleep(1)
             await self.bot.say(self.nextq())
 
     @trivia.command(
@@ -301,6 +332,7 @@ class Trivia:
                     msg = "```" + self.players[i].name + "wins!"
                     self.players = []
                     return
+            sleep(1)
             await self.bot.say(self.nextq())
         
 
