@@ -14,7 +14,9 @@ A bot for [discord](https://discordapp.com/).
 *todo*
 
 ## TODO
-*todo*
+Add command to edit ranks of chat members
+Add a soundboard using Discord.py Voice
 
 ## Credits
-*todo*
+Discord.py, All commands excluding Dice - Stone Daniel
+Dice Roll - Ryan Taylor
