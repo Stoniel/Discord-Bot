@@ -14,10 +14,10 @@ if __name__ == '__main__':
     extensions = [
         'commands.counter',
         'commands.template',
-        'commands.RockPaperScissors',
+        'commands.rps',
         'commands.timer',
         'commands.raids',
-        'commands.unixComs',
+        'commands.unix_cmds',
         'commands.dice',
         'commands.translate',
         'commands.weather',
