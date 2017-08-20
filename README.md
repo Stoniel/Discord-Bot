@@ -18,5 +18,6 @@ Add command to edit ranks of chat members
 Add a soundboard using Discord.py Voice
 
 ## Credits
-Discord.py, All commands excluding Dice - Stone Daniel
-Dice Roll - Ryan Taylor
+* discord.py, library used to make this bot
+* All commands excluding Dice - Stone Daniel
+* Dice Roll - Ryan Taylor
